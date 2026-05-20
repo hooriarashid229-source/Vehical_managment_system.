@@ -1,0 +1,85 @@
+package VehicleRentalSystem;
+
+import java.util.Scanner;
+public class Car extends Vehicle {
+    Scanner sc = new Scanner(System.in);
+    private int NoOFDoors;
+
+    public int getNoOFDoors() {
+        return NoOFDoors;
+    }
+
+    public void setNoOFDoors(int noOFDoors) {
+        NoOFDoors = noOFDoors;
+    }
+
+    Car( int NoOFDoors) {
+        super();
+        this.setNoOFDoors(NoOFDoors);
+    }
+
+    @Override
+    int calculateRentalDays(int days) {
+        this.setAvailabilityStatus(true);
+        if (days == 0) {
+            this.setAvailabilityStatus(false);
+        }
+            days *= getRentalRate();
+            return days;
+    }
+
+    void display(){
+        System.out.println("Enter license number of VehicleRentalSystem.Car:");
+        licensePlateNumber=sc.nextLine();
+        System.out.println("Enter Rental rate for VehicleRentalSystem.Car:");
+        rentalRate=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Rental rate calculation for car:"+calculateRentalDays(5));
+        System.out.println("Number Plate of car is :" + getLicensePlateNumber());
+        System.out.println("availability :"+ (isAvailabilityStatus()?"Not Available":"Available"));
+        System.out.println("Rental Rate per day:" + getRentalRate());
+        System.out.println("Number of doors:"+getNoOFDoors());
+    }
+}package VehicleRentalSystem;
+
+import java.util.Scanner;
+public class Car extends Vehicle {
+    Scanner sc = new Scanner(System.in);
+    private int NoOFDoors;
+
+    public int getNoOFDoors() {
+        return NoOFDoors;
+    }
+
+    public void setNoOFDoors(int noOFDoors) {
+        NoOFDoors = noOFDoors;
+    }
+
+    Car( int NoOFDoors) {
+        super();
+        this.setNoOFDoors(NoOFDoors);
+    }
+
+    @Override
+    int calculateRentalDays(int days) {
+        this.setAvailabilityStatus(true);
+        if (days == 0) {
+            this.setAvailabilityStatus(false);
+        }
+            days *= getRentalRate();
+            return days;
+    }
+
+    void display(){
+        System.out.println("Enter license number of VehicleRentalSystem.Car:");
+        licensePlateNumber=sc.nextLine();
+        System.out.println("Enter Rental rate for VehicleRentalSystem.Car:");
+        rentalRate=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Rental rate calculation for car:"+calculateRentalDays(5));
+        System.out.println("Number Plate of car is :" + getLicensePlateNumber());
+        System.out.println("availability :"+ (isAvailabilityStatus()?"Not Available":"Available"));
+        System.out.println("Rental Rate per day:" + getRentalRate());
+        System.out.println("Number of doors:"+getNoOFDoors());
+    }
+}

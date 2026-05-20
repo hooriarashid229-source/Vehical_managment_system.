@@ -1,0 +1,47 @@
+package VehicleRentalSystem;
+
+import java.util.Scanner;
+public class Bikes extends Vehicle {
+    Scanner sc = new Scanner(System.in);
+    private boolean helmetIncluded;
+    int total;
+
+    public boolean isHelmetIncluded() {
+        return helmetIncluded;
+    }
+
+    public void setHelmetIncluded(boolean helmetIncluded) {
+        this.helmetIncluded = helmetIncluded;
+    }
+    Bikes(boolean helmetIncluded) {
+        super();
+        this.setHelmetIncluded(helmetIncluded);
+    }
+
+
+    @Override
+    int calculateRentalDays(int days) {
+        this.setAvailabilityStatus(true);
+        if (days == 0) {
+            this.setAvailabilityStatus(false);
+        }
+        days *= getRentalRate();
+        if (helmetIncluded) {
+            total=days+50;
+        }
+        return total;
+    }
+
+    void display(){
+        System.out.println("Enter license number of bike:");
+        licensePlateNumber=sc.nextLine();
+        System.out.println("Enter Rental rate for bike:");
+        rentalRate=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Rental rate calculation for bikes:"+calculateRentalDays(2));
+        System.out.println("Number Plate of bike is :" + getLicensePlateNumber());
+        System.out.println("availability :"+ (isAvailabilityStatus()?"Not Available":"Available"));
+        System.out.println("Rental Rate per day:" + getRentalRate());
+        System.out.println(isHelmetIncluded()?"Helmet Included":"Helmet Not Included");
+    }
+}

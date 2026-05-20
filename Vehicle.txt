@@ -1,0 +1,38 @@
+package VehicleRentalSystem;
+
+abstract public class Vehicle {
+    String licensePlateNumber;
+    int rentalRate;
+     boolean availabilityStatus;
+
+
+    public boolean isAvailabilityStatus() {
+        return availabilityStatus;
+    }
+
+    public void setAvailabilityStatus(boolean availabilityStatus) {
+        this.availabilityStatus = availabilityStatus;
+    }
+
+    public int getRentalRate() {
+        return rentalRate;
+    }
+
+    public void setRentalRate(int rentalRate) {
+        this.rentalRate = rentalRate;
+    }
+
+    public String getLicensePlateNumber() {
+        return licensePlateNumber;
+    }
+
+    public void setLicensePlateNumber(String licensePlateNumber) {
+        this.licensePlateNumber = licensePlateNumber;
+    }
+   abstract int calculateRentalDays(int days);
+    public Vehicle(){
+        this.setRentalRate(rentalRate);
+        this.setAvailabilityStatus(availabilityStatus);
+        this.setLicensePlateNumber(licensePlateNumber);
+    }
+}

@@ -1,0 +1,47 @@
+package VehicleRentalSystem;
+
+import java.util.Scanner;
+public class Trucks extends Vehicle {
+    Scanner sc = new Scanner(System.in);
+    private int LoadCapacity;
+    int total;
+
+    public int getLoadCapacity() {
+        return LoadCapacity;
+    }
+
+    public void setLoadCapacity(int loadCapacity) {
+        LoadCapacity = loadCapacity;
+    }
+
+    Trucks(int LoadCapacity) {
+        super();
+        this.setLoadCapacity(LoadCapacity);
+    }
+
+
+    @Override
+    int calculateRentalDays(int days) {
+        this.setAvailabilityStatus(true);
+        if (days == 0) {
+            this.setAvailabilityStatus(false);
+        }
+        total= (getRentalRate()*days) +(LoadCapacity * 10);
+        return total;
+    }
+
+    void display(){
+        System.out.println("Enter license number of Truck:");
+        licensePlateNumber=sc.nextLine();
+        System.out.println("Enter Rental rate for Truck:");
+        rentalRate=sc.nextInt();
+        sc.nextLine();
+        System.out.println("Rental rate calculation for trucks:"+calculateRentalDays(6));
+        System.out.println("Number Plate of Truck is :" + getLicensePlateNumber());
+        System.out.println("availability :"+ (isAvailabilityStatus()?"Not Available":"Available"));
+        System.out.println("Rental Rate per day:" + getRentalRate());
+        System.out.println("Truck Load Capacity:"+getLoadCapacity());
+        }
+}
+
+ 

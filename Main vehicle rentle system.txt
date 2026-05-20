@@ -1,0 +1,50 @@
+package VehicleRentalSystem;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the type of VehicleRentalSystem.Vehicle you want to  rent:");
+        System.out.println("1.VehicleRentalSystem.Car");
+        System.out.println("2.Bike");
+        System.out.println("3.Truck");
+        System.out.println("Enter your choice:");
+        int choice=sc.nextInt();
+        sc.nextLine();
+
+
+        switch (choice){
+            case 1:
+                System.out.println("----------VehicleRentalSystem.Car-----------");
+                Car Car = new Car(5);
+                Car.display();
+            break;
+
+            case 2:
+                System.out.println("----------Bike-----------");
+                Bikes bikes=new Bikes(true);
+                bikes.display();
+            break;
+
+            case 3:
+                System.out.println("----------Truck-----------");
+                Trucks trucks=new Trucks(500);
+                trucks.display();
+            break;
+
+            default:
+                System.out.println("Invalid Choice");
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+}
